@@ -12,6 +12,11 @@ export const getRectFromOffsets = (textDiv: HTMLElement, startOffset: number, en
 
     const firstChild = clonedEle.firstChild;
     const range = new Range();
+
+    if(!firstChild ) {
+        return null;
+    }
+
     range.setStart(firstChild, startOffset);
     range.setEnd(firstChild, endOffset);
 
